@@ -32,6 +32,7 @@ public class EmployeeService {
 
     // Update
     public Employee updateEmployee(Employee employee){
+        employee.setEmployeeCode(employeeRepository.findEmployeeById(employee.getId()).get().getEmployeeCode());
         return employeeRepository.save(employee);
     }
 
